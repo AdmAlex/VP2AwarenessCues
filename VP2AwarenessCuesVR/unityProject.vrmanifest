@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.bürogebäude.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\VP2021-3\\Desktop\\VP git\\AwarenessCues\\VP2AwarenessCuesVR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Bürogebäude [Testing]"
+        }
+      }
+    }
+  ]
+}
