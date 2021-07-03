@@ -8,9 +8,9 @@ public class Oxigen : MonoBehaviour
     public GameObject oxigenStatus;
     public GameObject head;
     public Transform headTransform;
-    private float distanceX = 1.5f;
+    private float distanceX = 0.9f;
     private float distanceY = 0.0f;
-    private float distanceZ = 1.5f;
+    private float distanceZ = 0.9f;
     private bool oxigenButton;
     public float timer;
     public float tmp;
@@ -34,7 +34,7 @@ public class Oxigen : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > nextAction && timer <= 300.0f) {
             nextAction += period;
-            oxigenStatus.transform.localScale =- scaleChange;
+            oxigenStatus.transform.localScale -= scaleChange;
         }
         if(timer > 300.0f){
             oxigenStatus.SetActive(false);
