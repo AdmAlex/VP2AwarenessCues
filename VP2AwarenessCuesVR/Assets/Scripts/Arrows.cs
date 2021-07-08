@@ -35,8 +35,9 @@ public class Arrows : MonoBehaviour
         timer += Time.deltaTime;
         if(arrowButton0 == true){
             arrow.SetActive(true);
+            arrow.transform.rotation = Quaternion.Euler(0, 0, 0);
             tmp = timer + 3.0f;
-        }else if(Input.GetKeyDown("b")){
+        }else if(arrowButton1 == true){
             arrow.SetActive(true);
             arrow.transform.rotation = Quaternion.Euler(0, 0, -45.0f);
             tmp = timer + 10.0f;
@@ -69,5 +70,92 @@ public class Arrows : MonoBehaviour
             arrow.SetActive(false);
             arrow.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+    }
+
+    public void showArrow0(){
+        arrowButton0=true;
+        arrowButton1=false;
+        arrowButton2=false;
+        arrowButton3=false;
+        arrowButton4=false;
+        arrowButton5=false;
+        arrowButton6=false;
+        arrowButton7=false;
+    }
+    
+    public void showArrow1(){
+        arrowButton0=false;
+        arrowButton1=true;
+        arrowButton2=false;
+        arrowButton3=false;
+        arrowButton4=false;
+        arrowButton5=false;
+        arrowButton6=false;
+        arrowButton7=false;
+    }
+    
+    public void showArrow2(){
+        arrowButton0=false;
+        arrowButton1=false;
+        arrowButton2=true;
+        arrowButton3=false;
+        arrowButton4=false;
+        arrowButton5=false;
+        arrowButton6=false;
+        arrowButton7=false;
+    }
+    
+    public void showArrow3(){
+        arrowButton0=false;
+        arrowButton1=false;
+        arrowButton2=false;
+        arrowButton3=true;
+        arrowButton4=false;
+        arrowButton5=false;
+        arrowButton6=false;
+        arrowButton7=false;
+    }
+    
+    public void showArrow4(){
+        arrowButton0=false;
+        arrowButton1=false;
+        arrowButton2=false;
+        arrowButton3=false;
+        arrowButton4=true;
+        arrowButton5=false;
+        arrowButton6=false;
+        arrowButton7=false;
+    }
+    
+    public void showArrow5(){
+        arrowButton0=false;
+        arrowButton1=false;
+        arrowButton2=false;
+        arrowButton3=false;
+        arrowButton4=false;
+        arrowButton5=true;
+        arrowButton6=false;
+        arrowButton7=false;
+    }
+    
+    public void showArrow6(){
+        arrowButton0=false;
+        arrowButton1=false;
+        arrowButton2=false;
+        arrowButton3=false;
+        arrowButton4=false;
+        arrowButton5=false;
+        arrowButton6=true;
+        arrowButton7=false;
+    }
+        public void showArrow7(){
+        arrowButton0=false;
+        arrowButton1=false;
+        arrowButton2=false;
+        arrowButton3=false;
+        arrowButton4=false;
+        arrowButton5=false;
+        arrowButton6=false;
+        arrowButton7=true;
     }
 }

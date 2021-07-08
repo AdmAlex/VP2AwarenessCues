@@ -8,6 +8,7 @@ public class Oxigen : MonoBehaviour
     public GameObject oxigenStatus;
     public GameObject head;
     public Transform headTransform;
+    public bool active = false;
     private float distanceX = 0.9f;
     private float distanceY = 0.0f;
     private float distanceZ = 0.9f;
@@ -21,7 +22,8 @@ public class Oxigen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //oxigen.SetActive(false);
+        
+        oxigen.SetActive(active);
         oxigen.transform.SetParent(headTransform);
         oxigen.transform.position = head.transform.position;
         oxigen.transform.position = oxigen.transform.position + new Vector3(distanceX, distanceY, distanceZ);
@@ -39,5 +41,10 @@ public class Oxigen : MonoBehaviour
         if(timer > 300.0f){
             oxigenStatus.SetActive(false);
         }
+    }
+
+    public void ShowOxigen(){
+        active = !active;
+        oxigen.SetActive(active);
     }
 }
