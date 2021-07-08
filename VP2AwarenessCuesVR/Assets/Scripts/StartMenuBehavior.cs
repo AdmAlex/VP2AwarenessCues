@@ -8,7 +8,7 @@ namespace Network
     {
         void OnGUI()
         {
-            GUILayout.BeginArea(new Rect(340, 10, 640, 300));
+            GUILayout.BeginArea(new Rect(10, 10, 300, 300));
             if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
             {
                 StartButtons();
@@ -17,7 +17,7 @@ namespace Network
             {
                 StatusLabels();
 
-                //SubmitNewPosition();
+                SubmitNewPosition();
             }
 
             GUILayout.EndArea();
@@ -39,7 +39,7 @@ namespace Network
                 NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetType().Name);
             GUILayout.Label("Mode: " + mode);
         }
-        /**
+
         static void SubmitNewPosition()
         {
             if (GUILayout.Button(NetworkManager.Singleton.IsServer ? "Move" : "Request Position Change"))
@@ -54,6 +54,6 @@ namespace Network
                     }
                 }
             }
-        }*/
+        }
     }
 }

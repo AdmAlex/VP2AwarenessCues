@@ -8,17 +8,35 @@ namespace Network
 {
     public class NetworkPlayer : NetworkBehaviour
     {
+
+        public GameObject observerPlayer;
         public NetworkVariableVector3 Position = new NetworkVariableVector3(new NetworkVariableSettings
         {
             WritePermission = NetworkVariablePermission.ServerOnly,
             ReadPermission = NetworkVariablePermission.Everyone
         });
-        /**
+        
         public override void NetworkStart()
         {
-            Move();
+            InitiatePlayer();
         }
 
+        public void InitiatePlayer() 
+        {
+            if (NetworkManager.Singleton.IsHost) {
+                Debug.Log("is Host and server");
+                
+                observerPlayer = GameObject.Find("Observer");
+                observerPlayer.SetActive(false);
+            } 
+            else 
+            {
+                Debug.Log("is Client");
+                observerPlayer = GameObject.Find("Observer");
+                observerPlayer.SetActive(false);
+            }
+        }
+        
         public void Move()
         {
             if (NetworkManager.Singleton.IsServer)
@@ -41,12 +59,12 @@ namespace Network
 
         static Vector3 GetRandomPositionOnPlane()
         {
-            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
+            return new Vector3(Random.Range(1f, 3f), 1f, Random.Range(1f, 3f));
         }
-
+        
         void Update()
         {
             transform.position = Position.Value;
-        }*/
+        }
     }
 }
