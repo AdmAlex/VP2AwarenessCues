@@ -23,7 +23,7 @@ public class Oxigen : MonoBehaviour
     void Start()
     {
         
-        oxigen.SetActive(active);
+        oxigen.SetActive(false);
         oxigen.transform.SetParent(headTransform);
         oxigen.transform.position = head.transform.position;
         oxigen.transform.position = oxigen.transform.position + new Vector3(distanceX, distanceY, distanceZ);

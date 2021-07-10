@@ -57,6 +57,30 @@ public class Rooms : MonoBehaviour
     public Material mRoom11On;
     public Material mRoom12;
     public Material mRoom12On;
+    public Sprite sRoom1;
+    public Sprite sRoom2;
+    public Sprite sRoom3;
+    public Sprite sRoom4;
+    public Sprite sRoom5;
+    public Sprite sRoom6;
+    public Sprite sRoom7;
+    public Sprite sRoom8;
+    public Sprite sRoom9;
+    public Sprite sRoom10;
+    public Sprite sRoom11;
+    public Sprite sRoom12;
+    public Sprite sRoom1On;
+    public Sprite sRoom2On;
+    public Sprite sRoom3On;
+    public Sprite sRoom4On;
+    public Sprite sRoom5On;
+    public Sprite sRoom6On;
+    public Sprite sRoom7On;
+    public Sprite sRoom8On;
+    public Sprite sRoom9On;
+    public Sprite sRoom10On;
+    public Sprite sRoom11On;
+    public Sprite sRoom12On;
     private bool room1On = false;
     private bool room2On = false;
     private bool room3On = false;
@@ -73,6 +97,18 @@ public class Rooms : MonoBehaviour
     private float distanceY = 0.19f;
     private float distanceZ = 2.87f;
     private int counter = 0;
+    private bool boolRoom1;
+    private bool boolRoom2;
+    private bool boolRoom3;
+    private bool boolRoom4;
+    private bool boolRoom5;
+    private bool boolRoom6;
+    private bool boolRoom7;
+    private bool boolRoom8;
+    private bool boolRoom9;
+    private bool boolRoom10;
+    private bool boolRoom11;
+    private bool boolRoom12;
 
 
     // Start is called before the first frame update
@@ -81,18 +117,18 @@ public class Rooms : MonoBehaviour
         roomText.transform.SetParent(headTransform);
         roomText.transform.position = new Vector3(distanceX, distanceY, distanceZ);
         number.GetComponent<TextMesh>().text = counter.ToString();
-        room1 = GameObject.Find("Room1");
-        room2 = GameObject.Find("Room2");
-        room3 = GameObject.Find("Room3");
-        room4 = GameObject.Find("Room4");
-        room5 = GameObject.Find("Room5");
-        room6 = GameObject.Find("Room6");
-        room7 = GameObject.Find("Room7");
-        room8 = GameObject.Find("Room8");
-        room9 = GameObject.Find("Room9");
-        room10 = GameObject.Find("Room10");
-        room11 = GameObject.Find("Room11");
-        room12 = GameObject.Find("Room12");
+        room1 = GameObject.Find("RoomButton1");
+        room2 = GameObject.Find("RoomButton2");
+        room3 = GameObject.Find("RoomButton3");
+        room4 = GameObject.Find("RoomButton4");
+        room5 = GameObject.Find("RoomButton5");
+        room6 = GameObject.Find("RoomButton6");
+        room7 = GameObject.Find("RoomButton7");
+        room8 = GameObject.Find("RoomButton8");
+        room9 = GameObject.Find("RoomButton9");
+        room10 = GameObject.Find("RoomButton10");
+        room11 = GameObject.Find("RoomButton11");
+        room12 = GameObject.Find("RoomButton12");
         room1Map = GameObject.Find("Room1Map");
         room2Map = GameObject.Find("Room2Map");
         room3Map = GameObject.Find("Room3Map");
@@ -110,161 +146,185 @@ public class Rooms : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("v") && room1On == true){
-            room1.GetComponent<MeshRenderer>().material = mRoom1;
-            room1Map.GetComponent<MeshRenderer>().material = mRoom1;
-            room1On = !room1On;
-            counter -= 1;
-            number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(Input.GetKeyDown("c") && room1On == false){
-            room1.GetComponent<MeshRenderer>().material = mRoom1On;
+        
+    }
+    public void Room1Done(){
+        boolRoom1 = !boolRoom1;
+        if (boolRoom1 == true){
+            room1.GetComponent<Button>().image.sprite = sRoom1On;
             room1Map.GetComponent<MeshRenderer>().material = mRoom1On;
-            room1On = !room1On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }
-        if(1==1 && room2On == true){
-            room2.GetComponent<MeshRenderer>().material = mRoom2;
-            room2Map.GetComponent<MeshRenderer>().material = mRoom2;
-            room2On = !room2On;
+        }else if (boolRoom1 == false){
+            room1.GetComponent<Button>().image.sprite = sRoom1;
+            room1Map.GetComponent<MeshRenderer>().material = mRoom1;
             counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room2On == false){
-            room2.GetComponent<MeshRenderer>().material = mRoom2On;
+        }
+    }
+
+    public void Room2Done(){
+        boolRoom2 = !boolRoom2;
+        if (boolRoom2 == true){
+            room2.GetComponent<Button>().image.sprite = sRoom2On;
             room2Map.GetComponent<MeshRenderer>().material = mRoom2On;
-            room2On = !room2On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }
-        if(1==1 && room3On == true){
-            room3.GetComponent<MeshRenderer>().material = mRoom3;
-            room3Map.GetComponent<MeshRenderer>().material = mRoom3;
-            room3On = !room3On;
+        }else if (boolRoom2 == false){
+            room2.GetComponent<Button>().image.sprite = sRoom2;
+            room2Map.GetComponent<MeshRenderer>().material = mRoom2;
             counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room3On == false){
-            room3.GetComponent<MeshRenderer>().material = mRoom3On;
+        }
+    }
+
+    public void Room3Done(){
+        boolRoom3 = !boolRoom3;
+        if (boolRoom3 == true){
+            room3.GetComponent<Button>().image.sprite = sRoom3On;
             room3Map.GetComponent<MeshRenderer>().material = mRoom3On;
-            room3On = !room3On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }
-        if(1==1 && room4On == true){
-            room4.GetComponent<MeshRenderer>().material = mRoom4;
-            room4Map.GetComponent<MeshRenderer>().material = mRoom4;
-            room4On = !room4On;
+        }else if (boolRoom3 == false){
+            room3.GetComponent<Button>().image.sprite = sRoom3;
+            room3Map.GetComponent<MeshRenderer>().material = mRoom3;
             counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room4On == false){
-            room4.GetComponent<MeshRenderer>().material = mRoom4On;
+        }
+    }
+
+    public void Room4Done(){
+        boolRoom4 = !boolRoom4;
+        if (boolRoom4 == true){
+            room4.GetComponent<Button>().image.sprite = sRoom4On;
             room4Map.GetComponent<MeshRenderer>().material = mRoom4On;
-            room4On = !room4On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }
-        if(1==1 && room5On == true){
-            room5.GetComponent<MeshRenderer>().material = mRoom5;
-            room5Map.GetComponent<MeshRenderer>().material = mRoom5;
-            room5On = !room5On;
+        }else if (boolRoom4 == false){
+            room4.GetComponent<Button>().image.sprite = sRoom4;
+            room4Map.GetComponent<MeshRenderer>().material = mRoom4;
             counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room5On == false){
-            room5.GetComponent<MeshRenderer>().material = mRoom5On;
+        }
+    }
+
+    public void Room5Done(){
+        boolRoom5 = !boolRoom5;
+        if (boolRoom5 == true){
+            room5.GetComponent<Button>().image.sprite = sRoom5On;
             room5Map.GetComponent<MeshRenderer>().material = mRoom5On;
-            room5On = !room5On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }
-        if(1==1 && room6On == true){
-            room6.GetComponent<MeshRenderer>().material = mRoom6;
-            room6Map.GetComponent<MeshRenderer>().material = mRoom6;
-            room6On = !room6On;
+        }else if (boolRoom5 == false){
+            room5.GetComponent<Button>().image.sprite = sRoom5;
+            room5Map.GetComponent<MeshRenderer>().material = mRoom5;
             counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room6On == false){
-            room6.GetComponent<MeshRenderer>().material = mRoom6On;
+        }
+    }
+
+    public void Room6Done(){
+        boolRoom6 = !boolRoom6;
+        if (boolRoom6 == true){
+            room6.GetComponent<Button>().image.sprite = sRoom6On;
             room6Map.GetComponent<MeshRenderer>().material = mRoom6On;
-            room6On = !room6On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }
-        if(1==1 && room7On == true){
-            room7.GetComponent<MeshRenderer>().material = mRoom7;
-            room7Map.GetComponent<MeshRenderer>().material = mRoom7;
-            room7On = !room7On;
+        }else if (boolRoom6 == false){
+            room6.GetComponent<Button>().image.sprite = sRoom6;
+            room6Map.GetComponent<MeshRenderer>().material = mRoom6;
             counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room7On == false){
-            room7.GetComponent<MeshRenderer>().material = mRoom7On;
+        }
+    }
+
+    public void Room7Done(){
+        boolRoom7 = !boolRoom7;
+        if (boolRoom7 == true){
+            room7.GetComponent<Button>().image.sprite = sRoom7On;
             room7Map.GetComponent<MeshRenderer>().material = mRoom7On;
-            room7On = !room7On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }
-        if(1==1 && room8On == true){
-            room8.GetComponent<MeshRenderer>().material = mRoom8;
-            room8Map.GetComponent<MeshRenderer>().material = mRoom8;
-            room8On = !room8On;
+        }else if (boolRoom7 == false){
+            room7.GetComponent<Button>().image.sprite = sRoom7;
+            room7Map.GetComponent<MeshRenderer>().material = mRoom7;
             counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room8On == false){
-            room8.GetComponent<MeshRenderer>().material = mRoom8On;
+        }
+    }
+
+    public void Room8Done(){
+        boolRoom8 = !boolRoom8;
+        if (boolRoom8 == true){
+            room8.GetComponent<Button>().image.sprite = sRoom8On;
             room8Map.GetComponent<MeshRenderer>().material = mRoom8On;
-            room8On = !room8On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }
-        if(1==1 && room9On == true){
-            room9.GetComponent<MeshRenderer>().material = mRoom9;
-            room9Map.GetComponent<MeshRenderer>().material = mRoom9;
-            room9On = !room9On;
+        }else if (boolRoom8 == false){
+            room8.GetComponent<Button>().image.sprite = sRoom8;
+            room8Map.GetComponent<MeshRenderer>().material = mRoom8;
             counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room9On == false){
-            room9.GetComponent<MeshRenderer>().material = mRoom9On;
+        }
+    }
+
+    public void Room9Done(){
+        boolRoom9 = !boolRoom9;
+        if (boolRoom9 == true){
+            room9.GetComponent<Button>().image.sprite = sRoom9On;
             room9Map.GetComponent<MeshRenderer>().material = mRoom9On;
-            room9On = !room9On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }
-        if(1==1 && room10On == true){
-            room10.GetComponent<MeshRenderer>().material = mRoom10;
-            room10Map.GetComponent<MeshRenderer>().material = mRoom10;
-            room10On = !room10On;
+        }else if (boolRoom9 == false){
+            room9.GetComponent<Button>().image.sprite = sRoom9;
+            room9Map.GetComponent<MeshRenderer>().material = mRoom9;
             counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room10On == false){
-            room10.GetComponent<MeshRenderer>().material = mRoom10On;
+        }
+    }
+
+    public void Room10Done(){
+        boolRoom10 = !boolRoom10;
+        if (boolRoom10 == true){
+            room10.GetComponent<Button>().image.sprite = sRoom10On;
             room10Map.GetComponent<MeshRenderer>().material = mRoom10On;
-            room10On = !room10On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }
-        if(1==1 && room11On == true){
-            room11.GetComponent<MeshRenderer>().material = mRoom11;
-            room11Map.GetComponent<MeshRenderer>().material = mRoom11;
-            room11On = !room11On;
+        }else if (boolRoom10 == false){
+            room10.GetComponent<Button>().image.sprite = sRoom10;
+            room10Map.GetComponent<MeshRenderer>().material = mRoom10;
             counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room11On == false){
-            room11.GetComponent<MeshRenderer>().material = mRoom11On;
+        }
+    }
+
+    public void Room11Done(){
+        boolRoom11 = !boolRoom11;
+        if (boolRoom11 == true){
+            room11.GetComponent<Button>().image.sprite = sRoom11On;
             room11Map.GetComponent<MeshRenderer>().material = mRoom11On;
-            room11On = !room11On;
             counter += 1;
+            number.GetComponent<TextMesh>().text = counter.ToString();
+        }else if (boolRoom11 == false){
+            room11.GetComponent<Button>().image.sprite = sRoom11;
+            room11Map.GetComponent<MeshRenderer>().material = mRoom11;
+            counter -= 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
         }
-        if(1==1 && room12On == true){
-            room12.GetComponent<MeshRenderer>().material = mRoom12;
-            room12Map.GetComponent<MeshRenderer>().material = mRoom12;
-            room12On = !room12On;
-           counter -= 1;
-            number.GetComponent<TextMesh>().text = counter.ToString();
-        }else if(1==1 && room12On == false){
-            room12.GetComponent<MeshRenderer>().material = mRoom12On;
+    }
+
+    public void Room12Done(){
+        boolRoom12 = !boolRoom12;
+        if (boolRoom12 == true){
+            room12.GetComponent<Button>().image.sprite = sRoom12On;
             room12Map.GetComponent<MeshRenderer>().material = mRoom12On;
-            room12On = !room12On;
             counter += 1;
             number.GetComponent<TextMesh>().text = counter.ToString();
-        } 
+        }else if (boolRoom12 == false){
+            room12.GetComponent<Button>().image.sprite = sRoom12;
+            room12Map.GetComponent<MeshRenderer>().material = mRoom12;
+            counter -= 1;
+            number.GetComponent<TextMesh>().text = counter.ToString();
+        }
     }
 }
