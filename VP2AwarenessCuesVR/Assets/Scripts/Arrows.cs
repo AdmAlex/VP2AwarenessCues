@@ -26,7 +26,6 @@ public class Arrows : MonoBehaviour
         arrow.SetActive(false);
         arrow.transform.SetParent(headTransform);
         arrow.transform.position = head.transform.position + head.transform.forward * distance;
-        //getter für arrowButtons
     }
 
     // Update is called once per frame
