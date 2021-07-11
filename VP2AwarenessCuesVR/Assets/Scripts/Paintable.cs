@@ -13,6 +13,7 @@ public class Paintable : MonoBehaviour
     public float BrushSize = 0.1f;
     public bool draw = false;
     public bool waypointActive = false;
+    public bool showWaypointandArrow = false;
     public Button button;
 
 
@@ -21,8 +22,8 @@ public class Paintable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Waypoint.SetActive(false);
-        Arrow.SetActive(false);
+        Waypoint.GetComponent<Renderer>().enabled = false;
+        Arrow.GetComponent<Renderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -51,13 +52,13 @@ public class Paintable : MonoBehaviour
     public void Draw(){
         
         draw = !draw;
-        if(draw ==true){
-            button.GetComponentInChildren<Text>().text = "Wegzeichner: Aus";
-        }
-        else{
-            button.GetComponentInChildren<Text>().text = "Wegzeichner: An";
-        }
-        
+        //if(draw ==true){
+        //    button.GetComponentInChildren<Text>().text = "Wegzeichner: Aus";
+        //}
+        //else{
+        //    button.GetComponentInChildren<Text>().text = "Wegzeichner: An";
+        //}
+        //
     }
 
     public void DeleteLine(){
@@ -67,9 +68,13 @@ public class Paintable : MonoBehaviour
             }
     }
 
-    public void ActivateWaypoint(){
-        Waypoint.SetActive(true);
-        Arrow.SetActive(true);
+    public void ShowWaypoint(){
+        showWaypointandArrow = !showWaypointandArrow;
+        Waypoint.GetComponent<Renderer>().enabled = showWaypointandArrow;
+        Arrow.GetComponent<Renderer>().enabled = showWaypointandArrow;
+    }
+
+    public void DrawWaypoint(){
         waypointActive = !waypointActive;
     }
 
