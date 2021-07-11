@@ -26293,8 +26293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 1356553273}
-  head: {fileID: 615121109}
-  headTransform: {fileID: 615261377}
+  head: {fileID: 615144613}
+  headTransform: {fileID: 615333227}
 --- !u!114 &1163939418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26311,8 +26311,8 @@ MonoBehaviour:
   oxigenStatus: {fileID: 1784687650}
   oxigenObserver: {fileID: 1784136067}
   oxigenStatusObserver: {fileID: 272218669}
-  head: {fileID: 615121109}
-  headTransform: {fileID: 615261377}
+  head: {fileID: 615144613}
+  headTransform: {fileID: 615333227}
   active: 0
 --- !u!114 &1163939419
 MonoBehaviour:
@@ -26327,8 +26327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomText: {fileID: 314224433}
-  head: {fileID: 615121109}
-  headTransform: {fileID: 615261377}
+  head: {fileID: 615144613}
+  headTransform: {fileID: 615333227}
   number: {fileID: 1871759853}
   mRoom1: {fileID: 2100000, guid: c25062f12dede7f468bc5801496c2ba0, type: 2}
   mRoom1On: {fileID: 2100000, guid: 157a21df50eaa53419fae4bbc932e221, type: 2}
